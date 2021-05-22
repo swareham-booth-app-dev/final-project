@@ -72,7 +72,6 @@ RUN /bin/bash -l -c "gem install rufo"
 
 WORKDIR /base-rails
 COPY Gemfile /base-rails/Gemfile
-COPY Gemfile.lock /base-rails/Gemfile.lock
 RUN /bin/bash -l -c "gem install bundler:2.1.4"
 # USER root
 # RUN mkdir /workspace && chmod 755 /workspace
