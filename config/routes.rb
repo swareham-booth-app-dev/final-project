@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get("/test", { :controller => "testing", :action => "index" })
 
 
   # Routes for the Offer resource:
