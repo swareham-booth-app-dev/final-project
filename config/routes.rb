@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get("/", { :controller => "testing", :action => "index" })
+
+
   get("/test", { :controller => "testing", :action => "index" })
 
 
