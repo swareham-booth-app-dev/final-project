@@ -9,4 +9,5 @@
 #  updated_at         :datetime         not null
 #
 class Function < ApplicationRecord
+    has_many(:applications, { :class_name => "Application", :foreign_key => "function_id" })
 end

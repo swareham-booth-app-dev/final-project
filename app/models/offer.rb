@@ -13,4 +13,5 @@
 #  updated_at        :datetime         not null
 #
 class Offer < ApplicationRecord
+    has_one(:application, { :class_name => "Application", :foreign_key => "offer_id" })
 end

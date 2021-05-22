@@ -11,4 +11,5 @@
 #  updated_at         :datetime         not null
 #
 class Location < ApplicationRecord
+    has_many(:applications, { :class_name => "Application", :foreign_key => "location_id" })
 end
