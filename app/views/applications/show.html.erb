@@ -1,0 +1,191 @@
+<div>
+  <div>
+    <h1>
+      Application #<%= @the_application.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/applications">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_application/<%= @the_application.id %>">
+          Delete application
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Opened date
+      </dt>
+      <dd>
+        <%= @the_application.opened_date %>
+      </dd>
+
+      <dt>
+        Due date
+      </dt>
+      <dd>
+        <%= @the_application.due_date %>
+      </dd>
+
+      <dt>
+        Company
+      </dt>
+      <dd>
+        <%= @the_application.company_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_application.user_id %>
+      </dd>
+
+      <dt>
+        Role title
+      </dt>
+      <dd>
+        <%= @the_application.role_title %>
+      </dd>
+
+      <dt>
+        Function
+      </dt>
+      <dd>
+        <%= @the_application.function_id %>
+      </dd>
+
+      <dt>
+        Date submitted
+      </dt>
+      <dd>
+        <%= @the_application.date_submitted %>
+      </dd>
+
+      <dt>
+        Location
+      </dt>
+      <dd>
+        <%= @the_application.location_id %>
+      </dd>
+
+      <dt>
+        Offer
+      </dt>
+      <dd>
+        <%= @the_application.offer_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_application.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_application.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit application
+    </h2>
+
+    <form action="/modify_application/<%= @the_application.id %>"  method="post" >
+      <div>
+        <label for="opened_date_box">
+          Opened date
+        </label>
+
+        <input type="date" id="opened_date_box" name="query_opened_date" value="<%= @the_application.opened_date %>">
+      </div>
+
+      <div>
+        <label for="due_date_box">
+          Due date
+        </label>
+
+        <input type="date" id="due_date_box" name="query_due_date" value="<%= @the_application.due_date %>">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_application.company_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_application.user_id %>">
+      </div>
+
+      <div>
+        <label for="role_title_box">
+          Role title
+        </label>
+
+        <input type="text" id="role_title_box" name="query_role_title" value="<%= @the_application.role_title %>">
+      </div>
+
+      <div>
+        <label for="function_id_box">
+          Function
+        </label>
+
+        <input type="text" id="function_id_box" name="query_function_id" value="<%= @the_application.function_id %>">
+      </div>
+
+      <div>
+        <label for="date_submitted_box">
+          Date submitted
+        </label>
+
+        <input type="date" id="date_submitted_box" name="query_date_submitted" value="<%= @the_application.date_submitted %>">
+      </div>
+
+      <div>
+        <label for="location_id_box">
+          Location
+        </label>
+
+        <input type="text" id="location_id_box" name="query_location_id" value="<%= @the_application.location_id %>">
+      </div>
+
+      <div>
+        <label for="offer_id_box">
+          Offer
+        </label>
+
+        <input type="text" id="offer_id_box" name="query_offer_id" value="<%= @the_application.offer_id %>">
+      </div>
+
+      <button>
+        Update application
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

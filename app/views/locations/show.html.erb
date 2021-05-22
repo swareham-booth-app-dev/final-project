@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Location #<%= @the_location.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/locations">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_location/<%= @the_location.id %>">
+          Delete location
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        City
+      </dt>
+      <dd>
+        <%= @the_location.city %>
+      </dd>
+
+      <dt>
+        State
+      </dt>
+      <dd>
+        <%= @the_location.state %>
+      </dd>
+
+      <dt>
+        Country
+      </dt>
+      <dd>
+        <%= @the_location.country %>
+      </dd>
+
+      <dt>
+        Applications count
+      </dt>
+      <dd>
+        <%= @the_location.applications_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_location.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_location.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit location
+    </h2>
+
+    <form action="/modify_location/<%= @the_location.id %>"  method="post" >
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city" value="<%= @the_location.city %>">
+      </div>
+
+      <div>
+        <label for="state_box">
+          State
+        </label>
+
+        <input type="text" id="state_box" name="query_state" value="<%= @the_location.state %>">
+      </div>
+
+      <div>
+        <label for="country_box">
+          Country
+        </label>
+
+        <input type="text" id="country_box" name="query_country" value="<%= @the_location.country %>">
+      </div>
+
+      <div>
+        <label for="applications_count_box">
+          Applications count
+        </label>
+
+        <input type="text" id="applications_count_box" name="query_applications_count" value="<%= @the_location.applications_count %>">
+      </div>
+
+      <button>
+        Update location
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

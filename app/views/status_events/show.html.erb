@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Status event #<%= @the_status_event.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/status_events">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_status_event/<%= @the_status_event.id %>">
+          Delete status event
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Event type
+      </dt>
+      <dd>
+        <%= @the_status_event.event_type %>
+      </dd>
+
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= @the_status_event.date %>
+      </dd>
+
+      <dt>
+        Application
+      </dt>
+      <dd>
+        <%= @the_status_event.application_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_status_event.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_status_event.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit status event
+    </h2>
+
+    <form action="/modify_status_event/<%= @the_status_event.id %>"  method="post" >
+      <div>
+        <label for="event_type_box">
+          Event type
+        </label>
+
+        <input type="text" id="event_type_box" name="query_event_type" value="<%= @the_status_event.event_type %>">
+      </div>
+
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="date" id="date_box" name="query_date" value="<%= @the_status_event.date %>">
+      </div>
+
+      <div>
+        <label for="application_id_box">
+          Application
+        </label>
+
+        <input type="text" id="application_id_box" name="query_application_id" value="<%= @the_status_event.application_id %>">
+      </div>
+
+      <button>
+        Update status event
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

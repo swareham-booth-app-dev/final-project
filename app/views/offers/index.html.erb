@@ -1,0 +1,166 @@
+<div>
+  <div>
+    <h1>
+      List of all offers
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new offer
+    </h2>
+
+    <form action="/insert_offer" method="post">
+      <div>
+        <label for="date_received_box">
+          Date received
+        </label>
+
+        <input type="text" id="date_received_box" name="query_date_received">
+      </div>
+
+      <div>
+        <label for="response_due_date_box">
+          Response due date
+        </label>
+
+        <input type="date" id="response_due_date_box" name="query_response_due_date">
+      </div>
+
+      <div>
+        <label for="annual_salary_box">
+          Annual salary
+        </label>
+
+        <input type="text" id="annual_salary_box" name="query_annual_salary">
+      </div>
+
+      <div>
+        <label for="signing_bonus_box">
+          Signing bonus
+        </label>
+
+        <input type="text" id="signing_bonus_box" name="query_signing_bonus">
+      </div>
+
+      <div>
+        <label for="start_date_box">
+          Start date
+        </label>
+
+        <input type="date" id="start_date_box" name="query_start_date">
+      </div>
+
+      <div>
+        <label for="end_date_box">
+          End date
+        </label>
+
+        <input type="date" id="end_date_box" name="query_end_date">
+      </div>
+
+      <button>
+        Create offer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Date received
+        </th>
+
+        <th>
+          Response due date
+        </th>
+
+        <th>
+          Annual salary
+        </th>
+
+        <th>
+          Signing bonus
+        </th>
+
+        <th>
+          Start date
+        </th>
+
+        <th>
+          End date
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_offers.each do |an_offer| %>
+      <tr>
+        <td>
+          <%= an_offer.id %>
+        </td>
+
+        <td>
+          <%= an_offer.date_received %>
+        </td>
+
+        <td>
+          <%= an_offer.response_due_date %>
+        </td>
+
+        <td>
+          <%= an_offer.annual_salary %>
+        </td>
+
+        <td>
+          <%= an_offer.signing_bonus %>
+        </td>
+
+        <td>
+          <%= an_offer.start_date %>
+        </td>
+
+        <td>
+          <%= an_offer.end_date %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_offer.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_offer.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/offers/<%= an_offer.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

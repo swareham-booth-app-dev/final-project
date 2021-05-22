@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all locations
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new location
+    </h2>
+
+    <form action="/insert_location" method="post">
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city">
+      </div>
+
+      <div>
+        <label for="state_box">
+          State
+        </label>
+
+        <input type="text" id="state_box" name="query_state">
+      </div>
+
+      <div>
+        <label for="country_box">
+          Country
+        </label>
+
+        <input type="text" id="country_box" name="query_country">
+      </div>
+
+      <div>
+        <label for="applications_count_box">
+          Applications count
+        </label>
+
+        <input type="text" id="applications_count_box" name="query_applications_count">
+      </div>
+
+      <button>
+        Create location
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          City
+        </th>
+
+        <th>
+          State
+        </th>
+
+        <th>
+          Country
+        </th>
+
+        <th>
+          Applications count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_locations.each do |a_location| %>
+      <tr>
+        <td>
+          <%= a_location.id %>
+        </td>
+
+        <td>
+          <%= a_location.city %>
+        </td>
+
+        <td>
+          <%= a_location.state %>
+        </td>
+
+        <td>
+          <%= a_location.country %>
+        </td>
+
+        <td>
+          <%= a_location.applications_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_location.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_location.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/locations/<%= a_location.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

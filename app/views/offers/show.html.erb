@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Offer #<%= @the_offer.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/offers">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_offer/<%= @the_offer.id %>">
+          Delete offer
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Date received
+      </dt>
+      <dd>
+        <%= @the_offer.date_received %>
+      </dd>
+
+      <dt>
+        Response due date
+      </dt>
+      <dd>
+        <%= @the_offer.response_due_date %>
+      </dd>
+
+      <dt>
+        Annual salary
+      </dt>
+      <dd>
+        <%= @the_offer.annual_salary %>
+      </dd>
+
+      <dt>
+        Signing bonus
+      </dt>
+      <dd>
+        <%= @the_offer.signing_bonus %>
+      </dd>
+
+      <dt>
+        Start date
+      </dt>
+      <dd>
+        <%= @the_offer.start_date %>
+      </dd>
+
+      <dt>
+        End date
+      </dt>
+      <dd>
+        <%= @the_offer.end_date %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_offer.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_offer.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit offer
+    </h2>
+
+    <form action="/modify_offer/<%= @the_offer.id %>"  method="post" >
+      <div>
+        <label for="date_received_box">
+          Date received
+        </label>
+
+        <input type="text" id="date_received_box" name="query_date_received" value="<%= @the_offer.date_received %>">
+      </div>
+
+      <div>
+        <label for="response_due_date_box">
+          Response due date
+        </label>
+
+        <input type="date" id="response_due_date_box" name="query_response_due_date" value="<%= @the_offer.response_due_date %>">
+      </div>
+
+      <div>
+        <label for="annual_salary_box">
+          Annual salary
+        </label>
+
+        <input type="text" id="annual_salary_box" name="query_annual_salary" value="<%= @the_offer.annual_salary %>">
+      </div>
+
+      <div>
+        <label for="signing_bonus_box">
+          Signing bonus
+        </label>
+
+        <input type="text" id="signing_bonus_box" name="query_signing_bonus" value="<%= @the_offer.signing_bonus %>">
+      </div>
+
+      <div>
+        <label for="start_date_box">
+          Start date
+        </label>
+
+        <input type="date" id="start_date_box" name="query_start_date" value="<%= @the_offer.start_date %>">
+      </div>
+
+      <div>
+        <label for="end_date_box">
+          End date
+        </label>
+
+        <input type="date" id="end_date_box" name="query_end_date" value="<%= @the_offer.end_date %>">
+      </div>
+
+      <button>
+        Update offer
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,214 @@
+<div>
+  <div>
+    <h1>
+      List of all applications
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new application
+    </h2>
+
+    <form action="/insert_application" method="post">
+      <div>
+        <label for="opened_date_box">
+          Opened date
+        </label>
+
+        <input type="date" id="opened_date_box" name="query_opened_date">
+      </div>
+
+      <div>
+        <label for="due_date_box">
+          Due date
+        </label>
+
+        <input type="date" id="due_date_box" name="query_due_date">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="role_title_box">
+          Role title
+        </label>
+
+        <input type="text" id="role_title_box" name="query_role_title">
+      </div>
+
+      <div>
+        <label for="function_id_box">
+          Function
+        </label>
+
+        <input type="text" id="function_id_box" name="query_function_id">
+      </div>
+
+      <div>
+        <label for="date_submitted_box">
+          Date submitted
+        </label>
+
+        <input type="date" id="date_submitted_box" name="query_date_submitted">
+      </div>
+
+      <div>
+        <label for="location_id_box">
+          Location
+        </label>
+
+        <input type="text" id="location_id_box" name="query_location_id">
+      </div>
+
+      <div>
+        <label for="offer_id_box">
+          Offer
+        </label>
+
+        <input type="text" id="offer_id_box" name="query_offer_id">
+      </div>
+
+      <button>
+        Create application
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Opened date
+        </th>
+
+        <th>
+          Due date
+        </th>
+
+        <th>
+          Company
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Role title
+        </th>
+
+        <th>
+          Function
+        </th>
+
+        <th>
+          Date submitted
+        </th>
+
+        <th>
+          Location
+        </th>
+
+        <th>
+          Offer
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_applications.each do |an_application| %>
+      <tr>
+        <td>
+          <%= an_application.id %>
+        </td>
+
+        <td>
+          <%= an_application.opened_date %>
+        </td>
+
+        <td>
+          <%= an_application.due_date %>
+        </td>
+
+        <td>
+          <%= an_application.company_id %>
+        </td>
+
+        <td>
+          <%= an_application.user_id %>
+        </td>
+
+        <td>
+          <%= an_application.role_title %>
+        </td>
+
+        <td>
+          <%= an_application.function_id %>
+        </td>
+
+        <td>
+          <%= an_application.date_submitted %>
+        </td>
+
+        <td>
+          <%= an_application.location_id %>
+        </td>
+
+        <td>
+          <%= an_application.offer_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_application.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_application.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/applications/<%= an_application.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

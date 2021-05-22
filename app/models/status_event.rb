@@ -1,0 +1,2 @@
+class StatusEvent < ApplicationRecord
+end

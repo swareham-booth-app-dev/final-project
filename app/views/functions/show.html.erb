@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Function #<%= @the_function.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/functions">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_function/<%= @the_function.id %>">
+          Delete function
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_function.name %>
+      </dd>
+
+      <dt>
+        Applications count
+      </dt>
+      <dd>
+        <%= @the_function.applications_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_function.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_function.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit function
+    </h2>
+
+    <form action="/modify_function/<%= @the_function.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_function.name %>">
+      </div>
+
+      <div>
+        <label for="applications_count_box">
+          Applications count
+        </label>
+
+        <input type="text" id="applications_count_box" name="query_applications_count" value="<%= @the_function.applications_count %>">
+      </div>
+
+      <button>
+        Update function
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

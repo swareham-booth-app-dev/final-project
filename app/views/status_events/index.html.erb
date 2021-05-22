@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all status events
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new status event
+    </h2>
+
+    <form action="/insert_status_event" method="post">
+      <div>
+        <label for="event_type_box">
+          Event type
+        </label>
+
+        <input type="text" id="event_type_box" name="query_event_type">
+      </div>
+
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="date" id="date_box" name="query_date">
+      </div>
+
+      <div>
+        <label for="application_id_box">
+          Application
+        </label>
+
+        <input type="text" id="application_id_box" name="query_application_id">
+      </div>
+
+      <button>
+        Create status event
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Event type
+        </th>
+
+        <th>
+          Date
+        </th>
+
+        <th>
+          Application
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_status_events.each do |a_status_event| %>
+      <tr>
+        <td>
+          <%= a_status_event.id %>
+        </td>
+
+        <td>
+          <%= a_status_event.event_type %>
+        </td>
+
+        <td>
+          <%= a_status_event.date %>
+        </td>
+
+        <td>
+          <%= a_status_event.application_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_status_event.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_status_event.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/status_events/<%= a_status_event.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

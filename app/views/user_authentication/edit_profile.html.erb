@@ -1,0 +1,40 @@
+<div >
+  <h5>
+    Edit User Account
+  </h5>
+
+  <div>
+    <form action="/modify_user" method="post">
+      <div>
+        <label for="email_box">Email</label>
+        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
+      </div>
+      <div>
+        <label for="technical_background_box">Technical background</label>
+        <input id="technical_background_box" name="query_technical_background" type="checkbox" value="1" <%= "checked" if @current_user.technical_background %>>
+      </div>
+      <div>
+        <label for="cs_dual_degree_box">Cs dual degree</label>
+        <input id="cs_dual_degree_box" name="query_cs_dual_degree" type="checkbox" value="1" <%= "checked" if @current_user.cs_dual_degree %>>
+      </div>
+      <div>
+        <label for="applications_count_box">Applications count</label>
+        <input id="applications_count_box" name="query_applications_count" value="<%= @current_user.applications_count %>">
+      </div>
+
+      <div>
+        <label for="password_box">Password</label>
+        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+      </div>
+    
+      <div>
+        <label for="password_confirmation_box">Password Confirmation</label>
+        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+      </div>
+
+      <button>
+        Update account
+      </button>
+    </form>
+  </div>
+</div>
