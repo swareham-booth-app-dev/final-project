@@ -5,6 +5,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :password_digest
       t.boolean :technical_background
       t.boolean :cs_dual_degree
+      t.boolean :will_require_work_authorization
+      t.integer :graduation_year
       t.integer :applications_count
 
       t.timestamps

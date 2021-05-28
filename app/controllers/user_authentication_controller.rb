@@ -43,6 +43,8 @@ class UserAuthenticationController < ApplicationController
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.technical_background = params.fetch("query_technical_background", false)
     @user.cs_dual_degree = params.fetch("query_cs_dual_degree", false)
+    @user.will_require_work_authorization = params.fetch("query_will_require_work_authorization", false)
+    @user.graduation_year = params.fetch("query_graduation_year")
     @user.applications_count = params.fetch("query_applications_count")
 
     save_status = @user.save
@@ -67,6 +69,8 @@ class UserAuthenticationController < ApplicationController
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.technical_background = params.fetch("query_technical_background", false)
     @user.cs_dual_degree = params.fetch("query_cs_dual_degree", false)
+    @user.will_require_work_authorization = params.fetch("query_will_require_work_authorization", false)
+    @user.graduation_year = params.fetch("query_graduation_year")
     @user.applications_count = params.fetch("query_applications_count")
     
     if @user.valid?

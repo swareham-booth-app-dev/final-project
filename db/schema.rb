@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_194239) do
+ActiveRecord::Schema.define(version: 2021_05_28_230158) do
 
   create_table "applications", force: :cascade do |t|
     t.date "opened_date"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 2021_05_22_194239) do
     t.string "password_digest"
     t.boolean "technical_background"
     t.boolean "cs_dual_degree"
+    t.boolean "will_require_work_authorization"
+    t.integer "graduation_year"
     t.integer "applications_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

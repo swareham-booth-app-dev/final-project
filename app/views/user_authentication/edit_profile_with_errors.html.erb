@@ -35,6 +35,20 @@
       </div>
                       
       <div>
+        <label for="will_require_work_authorization_box">Will require work authorization</label>
+          
+        <input id="will_require_work_authorization_box" name="query_will_require_work_authorization" type="checkbox" value="1" <%= "checked" if @current_user.will_require_work_authorization %>>
+          
+      </div>
+                      
+      <div>
+        <label for="graduation_year_box">Graduation year</label>
+          
+        <input id="graduation_year_box" name="query_graduation_year" value="<%= @current_user.graduation_year %>">
+          
+      </div>
+                      
+      <div>
         <label for="applications_count_box">Applications count</label>
           
         <input id="applications_count_box" name="query_applications_count" value="<%= @current_user.applications_count %>">
